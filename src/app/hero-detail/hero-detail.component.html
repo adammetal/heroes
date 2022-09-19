@@ -1,0 +1,29 @@
+<div *ngIf="hero">
+  <h2>{{ hero.name | uppercase }} Details</h2>
+  <table class="hero-detail-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Loyalty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{hero.id}}</td>
+        <td>{{hero.name}}</td>
+        <td>{{hero.loyalty}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="hero-editor-box">
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
+    <app-loyalty
+      [first]="hero.first"
+      [sec]="hero.sec"
+      [ult]="hero.ult"
+      [(counter)]="hero.loyalty"
+    ></app-loyalty>
+  </div>
+</div>

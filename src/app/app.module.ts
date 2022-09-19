@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { LoyaltyComponent } from './loyalty/loyalty.component';
 import { DemoComponent } from './demo/demo.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, HeroesComponent, LoyaltyComponent, DemoComponent],
+  declarations: [AppComponent, HeroesComponent, LoyaltyComponent, DemoComponent, HeroDetailComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
