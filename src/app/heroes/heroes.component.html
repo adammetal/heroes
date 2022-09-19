@@ -1,0 +1,43 @@
+<h2>{{ hero.name | uppercase }} Details</h2>
+<div><span>id: </span>{{ hero.id }}</div>
+<div><span>name: </span>{{ hero.name }}</div>
+<div><span>cost: </span>{{ hero.cost }}</div>
+<div><span>loyalty: </span>{{ hero.loyalty }}</div>
+<div>
+  <label for="name">Hero name: </label>
+  <input id="name" [(ngModel)]="hero.name" placeholder="name" />
+  <app-loyalty
+    first="2"
+    sec="-2"
+    ult="-7"
+    [(counter)]="hero.loyalty"
+  ></app-loyalty>
+</div>
+<div>
+  <h2>My Heroes</h2>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <button [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+        <span class="badge">{{ hero.id }}</span>
+        <span class="name">
+          {{ hero.name }} ({{ hero.cost }}) <b>({{ hero.loyalty }})</b>
+        </span>
+      </button>
+    </li>
+  </ul>
+</div>
+<div *ngIf="selectedHero">
+  <h2>{{ selectedHero.name | uppercase }} Details</h2>
+  <div>id: {{ selectedHero.id }}</div>
+  <div>lyalty: {{ selectedHero.loyalty }}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name" />
+    <app-loyalty
+      first="1"
+      sec="-2"
+      ult="-7"
+      [(counter)]="selectedHero.loyalty"
+    ></app-loyalty>
+  </div>
+</div>
