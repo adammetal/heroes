@@ -12,7 +12,10 @@ export class HeroesComponent implements OnInit {
     id: 1,
     name: 'Chandra',
     cost: 6,
-    loyalty: 6
+    loyalty: 6,
+    first: 1,
+    sec: -4,
+    ult: -7
   };
 
   heroes = HEROES;
