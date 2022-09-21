@@ -1,5 +1,11 @@
-<h1>{{ title }}</h1>
-<app-heroes></app-heroes>
+<mat-toolbar>
+  <span>{{ title }}</span>
+  <button mat-raised-button routerLink="/heroes">Heroes</button>
+  <button mat-raised-button routerLink="/create">Creare hero</button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
 <div (click)="popMessage()">
   <h2>Logged messages</h2>
   <ul>
