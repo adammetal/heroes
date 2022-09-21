@@ -29,6 +29,10 @@ export class Stack<T> {
     return gen();
   }
 
+  public toArray(): T[] {
+    return Array.from(this.items);
+  }
+
   public toString(): string {
     return this.items.join(",");
   }

@@ -16,4 +16,8 @@ export class LogService {
   popMessage() {
     this.messages.pop();
   }
+
+  getMessages() {
+    return this.messages.toArray();
+  }
 }
