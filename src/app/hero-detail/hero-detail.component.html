@@ -19,6 +19,7 @@
         </tr>
       </tbody>
     </table>
+    <app-hero-image [src]="hero.image"></app-hero-image>
   </mat-card>
 
   <mat-card>
@@ -27,6 +28,11 @@
       <mat-label>Hero name</mat-label>
       <input matInput [(ngModel)]="hero.name" />
     </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Hero Image</mat-label>
+      <input matInput [(ngModel)]="newImage" />
+    </mat-form-field>
+    <button [disabled]="!newImage" (click)="onSaveImage()" mat-raised-button color="primary">Save hero image</button>
     <app-loyalty
       [first]="hero.first"
       [sec]="hero.sec"

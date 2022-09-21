@@ -2,17 +2,9 @@
   <span>{{ title }}</span>
   <button mat-raised-button routerLink="/heroes">Heroes</button>
   <button mat-raised-button routerLink="/create">Creare hero</button>
+  <button mat-raised-button routerLink="/logs">App logs</button>
 </mat-toolbar>
 
 <div class="outlet">
   <router-outlet></router-outlet>
-</div>
-
-<div (click)="popMessage()">
-  <h2>Logged messages</h2>
-  <ul>
-    <li *ngFor="let message of getLogMessages()">
-      {{ message }}
-    </li>
-  </ul>
 </div>

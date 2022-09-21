@@ -17,6 +17,8 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeroCreatorComponent } from './hero-creator/hero-creator.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LogsComponent } from './logs/logs.component';
+import { HeroImageComponent } from './hero-image/hero-image.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeroDetailComponent,
     HeroCreatorComponent,
     DashboardComponent,
+    LogsComponent,
+    HeroImageComponent,
   ],
   imports: [
     BrowserModule,

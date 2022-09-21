@@ -1,0 +1,11 @@
+<div *ngIf="src">
+  <h2>Hero image</h2>
+  <img
+    *ngIf="!error"
+    [class.hidden]="loading"
+    (load)="onImageLoaded()"
+    [src]="src"
+  />
+  <div class="loader" *ngIf="loading"></div>
+  <div *ngIf="error">General error message</div>
+</div>

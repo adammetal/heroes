@@ -6,4 +6,5 @@ export interface Hero {
   first: number;
   sec: number;
   ult: number;
+  image?: string;
 }

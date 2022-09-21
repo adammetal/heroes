@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-title>Logged messages</mat-card-title>
+  <mat-list>
+    <mat-list-item *ngFor="let message of getLogMessages()">
+      {{ message }}
+    </mat-list-item>
+  </mat-list>
+  <mat-card-footer>
+    <button mat-raised-button color="primary" (click)="popMessage()">
+      Pop
+    </button>
+  </mat-card-footer>
+</mat-card>

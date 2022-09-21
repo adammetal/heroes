@@ -9,13 +9,5 @@ import { LogService } from './log.service';
 export class AppComponent {
   title = 'Planeswalkers';
 
-  constructor(private logService: LogService) {}
-
-  popMessage() {
-    this.logService.popMessage();
-  }
-
-  getLogMessages() {
-    return this.logService.getMessages();
-  }
+  constructor() {}
 }
