@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { LogService } from '../log.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -13,7 +14,8 @@ export class HeroDetailComponent {
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
-    private location: Location
+    private location: Location,
+    private logService: LogService,
   ) { }
 
   hero?: Hero;
@@ -23,9 +25,13 @@ export class HeroDetailComponent {
   }
 
   getHero(): void {
+    this.logService.addMessage('Get Hero');
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
+      .subscribe(hero => {
+        this.hero = hero;
+        this.logService.addMessage(`Hero loaded ${hero?.name}`);
+      });
   }
 
   goBack(): void {

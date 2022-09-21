@@ -11,21 +11,13 @@ import { LogService } from '../log.service';
 export class HeroesComponent implements OnInit {
   heroes?: Hero[];
 
-  selectedHero?: Hero;
-
   constructor(
-    private heroesService: HeroService,
-    private logService: LogService
+    private heroesService: HeroService
   ) {}
 
   ngOnInit(): void {
     this.heroesService.getHeroes().subscribe((heroes) => {
       this.heroes = heroes;
     });
-  }
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.logService.addMessage("Hero selected " + hero.name);
   }
 }
