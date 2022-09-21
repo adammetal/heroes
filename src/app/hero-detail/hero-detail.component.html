@@ -1,30 +1,37 @@
+<button mat-raised-button color="primary" (click)="goBack()">Back</button>
+
 <div *ngIf="hero">
-  <h2>{{ hero.name | uppercase }} Details</h2>
-  <table class="hero-detail-table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Loyalty</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{hero.id}}</td>
-        <td>{{hero.name}}</td>
-        <td>{{hero.loyalty}}</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="hero-editor-box">
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
+  <mat-card>
+    <mat-card-title>{{ hero.name }} Details</mat-card-title>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Loyalty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ hero.id }}</td>
+          <td>{{ hero.name }}</td>
+          <td>{{ hero.loyalty }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Hero Editor</mat-card-title>
+    <mat-form-field appearance="fill">
+      <mat-label>Hero name</mat-label>
+      <input matInput [(ngModel)]="hero.name" />
+    </mat-form-field>
     <app-loyalty
       [first]="hero.first"
       [sec]="hero.sec"
       [ult]="hero.ult"
       [(counter)]="hero.loyalty"
     ></app-loyalty>
-  </div>
+  </mat-card>
 </div>
-<button (click)="goBack()">Back</button>

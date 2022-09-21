@@ -4,7 +4,9 @@
   <button mat-raised-button routerLink="/create">Creare hero</button>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<div class="outlet">
+  <router-outlet></router-outlet>
+</div>
 
 <div (click)="popMessage()">
   <h2>Logged messages</h2>

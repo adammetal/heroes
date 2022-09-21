@@ -1,13 +1,13 @@
-<h1>My Heroes</h1>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/details/{{ hero.id }}">
-      <button class="hero">
-        <span class="badge">{{ hero.id }}</span>
-        <span class="name">
-          {{ hero.name }} ({{ hero.cost }}) <b>({{ hero.loyalty }})</b>
-        </span>
-      </button>
-    </a>
-  </li>
-</ul>
+<mat-card>
+  <mat-card-title>My Planeswalkers</mat-card-title>
+  <mat-action-list>
+    <mat-list-item
+      *ngFor="let hero of heroes"
+      routerLink="/details/{{ hero.id }}"
+    >
+      <h3 matLine>{{ hero.name }}</h3>
+      <p matLine>Cost: {{ hero.cost }}</p>
+      <p matLine>Loyalty: {{ hero.loyalty }}</p>
+    </mat-list-item>
+  </mat-action-list>
+</mat-card>

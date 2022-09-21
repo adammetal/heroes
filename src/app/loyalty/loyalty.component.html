@@ -1,6 +1,8 @@
 <div>
   <div>Loyalty counter</div>
-  <button type="button" (click)="firstSkill()">{{ first }}</button>
-  <button type="button" (click)="secondSkill()">{{ sec }}</button>
-  <button type="button" (click)="ultimateSkill()">{{ ult }}</button>
+  <div class="controls">
+    <button mat-fab color="primary" (click)="firstSkill()">{{ first }}</button>
+    <button mat-fab color="primary" (click)="secondSkill()">{{ sec }}</button>
+    <button mat-fab color="primary" (click)="ultimateSkill()">{{ ult }}</button>
+  </div>
 </div>

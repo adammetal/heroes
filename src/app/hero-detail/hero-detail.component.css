@@ -1,0 +1,20 @@
+mat-card {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+table td,
+table th {
+  border: .5px solid white;
+}
