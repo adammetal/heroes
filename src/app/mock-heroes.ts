@@ -2,6 +2,11 @@ import { Hero } from './hero';
 
 export const HEROES: Hero[] = [
   {
+    skills: [
+      { cost: 1, text: 'test' },
+      { cost: 1, text: 'test' },
+      { cost: 1, text: 'test' },
+    ],
     first: 1,
     sec: 2,
     ult: -7,
@@ -13,6 +18,11 @@ export const HEROES: Hero[] = [
       'https://c1.scryfall.com/file/scryfall-cards/png/front/2/2/222a736e-d819-452d-aeda-eb848c4b2302.png?1656616489',
   },
   {
+    skills: [
+      { cost: 1, text: 'test' },
+      { cost: 1, text: 'test' },
+      { cost: 1, text: 'test' },
+    ],
     first: 1,
     sec: 2,
     ult: -8,
@@ -22,6 +32,11 @@ export const HEROES: Hero[] = [
     name: 'The Wandering Emperor',
   },
   {
+    skills: [
+      { cost: 1, text: 'test' },
+      { cost: 1, text: 'test' },
+      { cost: 1, text: 'test' },
+    ],
     first: 1,
     sec: 2,
     ult: -6,
@@ -31,6 +46,11 @@ export const HEROES: Hero[] = [
     name: 'Teferi, Hero of Dominaria',
   },
   {
+    skills: [
+      { cost: 1, text: 'test' },
+      { cost: 1, text: 'test' },
+      { cost: 1, text: 'test' },
+    ],
     first: 3,
     sec: 4,
     ult: -14,

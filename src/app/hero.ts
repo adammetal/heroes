@@ -7,4 +7,5 @@ export interface Hero {
   sec: number;
   ult: number;
   image?: string;
+  skills: {text: string, cost: number}[]
 }

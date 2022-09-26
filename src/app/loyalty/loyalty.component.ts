@@ -6,27 +6,18 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./loyalty.component.css'],
 })
 export class LoyaltyComponent {
-  @Input() first: number | string = 1;
-  @Input() sec: number | string = -2;
-  @Input() ult: number | string = -7;
+  @Input() skills: {text: string, cost: number}[] = [];
 
   @Input() counter!: number;
   @Output() counterChange = new EventEmitter<number>();
 
-  firstSkill() {
-    this.change(Number(this.first));
+  change(delta: number | string) {
+    this.counter += Number(delta);
+    this.counterChange.emit(this.counter);
   }
 
-  secondSkill() {
-    this.change(Number(this.sec));
-  }
-
-  ultimateSkill() {
-    this.change(Number(this.ult));
-  }
-
-  change(delta: number) {
-    this.counter += delta;
+  setTo(value: number | string) {
+    this.counter = Number(value);
     this.counterChange.emit(this.counter);
   }
 }

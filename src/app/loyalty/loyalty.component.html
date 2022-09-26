@@ -1,8 +1,11 @@
 <div>
   <div>Loyalty counter</div>
   <div class="controls">
-    <button mat-fab color="primary" (click)="firstSkill()">{{ first }}</button>
-    <button mat-fab color="primary" (click)="secondSkill()">{{ sec }}</button>
-    <button mat-fab color="primary" (click)="ultimateSkill()">{{ ult }}</button>
+    <div *ngFor="let skill of skills">
+      <button mat-fab color="primary" (click)="change(skill.cost)">
+        {{ skill.cost }}
+      </button>
+      {{ skill.text }}
+    </div>
   </div>
 </div>

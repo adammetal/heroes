@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { LogService } from '../log.service';
+import { LoyaltyComponent } from '../loyalty/loyalty.component';
 
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
   styleUrls: ['./hero-detail.component.css'],
 })
-export class HeroDetailComponent {
+export class HeroDetailComponent implements AfterViewInit {
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
@@ -22,8 +23,24 @@ export class HeroDetailComponent {
 
   newImage?: string;
 
+  originalLoyalty?: number;
+
+  @ViewChild('loyalty')
+  loyalty?: LoyaltyComponent;
+
   ngOnInit(): void {
     this.getHero();
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.loyalty);
+    this.originalLoyalty = this.loyalty?.counter;
+  }
+
+  resetLoyalty(): void {
+    if (this.originalLoyalty !== undefined) {
+      this.loyalty?.setTo(this.originalLoyalty);
+    }
   }
 
   onSaveImage(): void {

@@ -19,6 +19,14 @@
         </tr>
       </tbody>
     </table>
+    <app-loyalty
+      #loyalty
+      [skills]="hero.skills"
+      [(counter)]="hero.loyalty"
+    ></app-loyalty>
+    <button mat-raised-button color="primary" (click)="resetLoyalty()">
+      Reset loyalty
+    </button>
     <app-hero-image [src]="hero.image"></app-hero-image>
   </mat-card>
 
@@ -32,12 +40,28 @@
       <mat-label>Hero Image</mat-label>
       <input matInput [(ngModel)]="newImage" />
     </mat-form-field>
-    <button [disabled]="!newImage" (click)="onSaveImage()" mat-raised-button color="primary">Save hero image</button>
-    <app-loyalty
-      [first]="hero.first"
-      [sec]="hero.sec"
-      [ult]="hero.ult"
-      [(counter)]="hero.loyalty"
-    ></app-loyalty>
+
+    <div *ngFor="let skill of hero.skills">
+      <h2>{{ skill.cost }} {{ skill.text }}</h2>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Hero skill Text</mat-label>
+        <input matInput [(ngModel)]="skill.text" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Hero skill Cost</mat-label>
+        <input matInput [(ngModel)]="skill.cost" />
+      </mat-form-field>
+    </div>
+
+    <button
+      [disabled]="!newImage"
+      (click)="onSaveImage()"
+      mat-raised-button
+      color="primary"
+    >
+      Save hero image
+    </button>
   </mat-card>
 </div>
